@@ -9,8 +9,7 @@ from openai import AsyncOpenAI
 BASE = Path(__file__).parent
 
 API_KEYS = [
-    "AIzaSyCpZEwuKlChHwdklP6masPyVMjpq8WYR2c",
-    "AIzaSyDLCvR_kLizyJNrbABxne9-XrVZYmznl9k",
+    "",
 ]
 MODEL          = "gemma-4-26b-a4b-it"
 MAX_CONCURRENT = 5
