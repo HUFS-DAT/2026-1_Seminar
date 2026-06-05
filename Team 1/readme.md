@@ -24,12 +24,12 @@
 ---
 
 ## 02. ARCHITECTURE : 6단계 번역 파이프라인
-* **01 원문 입력** : 승정원일기 원문 입력[span_0](start_span)[span_0](end_span)
-* **02 NER 추출**  : SillokBERT-NER을 통한 개체명 인식[span_1](start_span)[span_1](end_span)
-* **03 KB 대조**   : 지식 베이스(KB) 매핑 및 시기 필터링[span_2](start_span)[span_2](end_span)
-* **04 Entity Link**: 팩트 생성 (한자-한글 매핑)[span_3](start_span)[span_3](end_span)
-* **05 프롬프트 증강**: NERinject 블록 프롬프트 삽입[span_4](start_span)[span_4](end_span)
-* **06 번역 출력** : Gemma-4-26B를 통한 최종 한국어 출력[span_5](start_span)[span_5](end_span)
+* **01 원문 입력** : 승정원일기 원문 입력
+* **02 NER 추출**  : SillokBERT-NER을 통한 개체명 인식
+* **03 KB 대조**   : 지식 베이스(KB) 매핑 및 시기 필터링
+* **04 Entity Link**: 팩트 생성 (한자-한글 매핑)
+* **05 프롬프트 증강**: NERinject 블록 프롬프트 삽입
+* **06 번역 출력** : Gemma-4-26B를 통한 최종 한국어 출력
 > **핵심 설계 결정 - 아키텍처 이질성 극복**
 > SillokBERT(인코더)와 Gemma(디코더)는 내부 표현 공간 및 레이어 구성이 이질적이라 가중치 직접 이관이 불가능합니다. 이에 따라 지식을 가중치 대신 **프롬프트 형식으로 전달하는 방식**으로 연구 방향을 전면 수정했습니다.
 
